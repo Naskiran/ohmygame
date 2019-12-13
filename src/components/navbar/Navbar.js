@@ -18,17 +18,41 @@ const Navbar = (props) => {
     delay: 800,
     config: config.wobbly,
   });
+  
+  const TableSearchBar = (props) => {
+    let input;
+    const handleChange = () => {
+      props.onSearch(input.value); //eslint-disable-line
+    };
+    return (
+      <div>
+        <label htmlFor="table-search-bar" className="w-100">
+          <span className="sr-only"></span>
+          <input
+            id="table-search-bar"
+            className="form-control form-control-sm"
+          ref={n => input = n} //eslint-disable-line
+            type="text"
+            placeholder="Search"
+            onChange={handleChange}
+          />
+        </label>
+      </div>
+    );
+  };
 
   return (
     <>
       <NavBar style={barAnimation}>
         <FlexContainer>
           <Brand />
+          <TableSearchBar />
           <NavLinks style={linkAnimation}>
-            <a href="/">link n1</a>
-            <a href="/">link n2</a>
-            <a href="/">link n3</a>
-            <a href="/">link n4</a>
+            <a>OHMYGAME</a>
+            <a href="/">HOME</a>
+            <a href="/">CATALOG</a>
+            <a href="/">LOGIN</a>
+            <a href="/">SIGN IN</a>
           </NavLinks>
           <BurgerWrapper>
             <BurgerMenu
