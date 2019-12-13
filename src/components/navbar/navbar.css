@@ -1,0 +1,10 @@
+.search {
+    display: flex;
+    justify-content: center;
+}
+
+.w-100 {
+    display: flex;
+    justify-content: center;
+    border: inset #fdcb6e 3px;
+}

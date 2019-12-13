@@ -5,6 +5,7 @@ import { useSpring, animated, config } from "react-spring";
 import Brand from "./Brand";
 import BurgerMenu from "./BurgerMenu";
 import CollapseMenu from "./CollapseMenu";
+import  "./navbar.css";
 
 const Navbar = (props) => {
   const barAnimation = useSpring({
@@ -22,16 +23,16 @@ const Navbar = (props) => {
   const TableSearchBar = (props) => {
     let input;
     const handleChange = () => {
-      props.onSearch(input.value); //eslint-disable-line
+      props.onSearch(input.value);
     };
     return (
-      <div>
+      <div className="search">
         <label htmlFor="table-search-bar" className="w-100">
           <span className="sr-only"></span>
           <input
             id="table-search-bar"
             className="form-control form-control-sm"
-          ref={n => input = n} //eslint-disable-line
+            ref={n => input = n}
             type="text"
             placeholder="Search"
             onChange={handleChange}
