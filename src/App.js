@@ -16,6 +16,20 @@ class App extends Component {
 
   render() {
 
+    fetch("https://rawg-video-games-database.p.rapidapi.com/games", {
+      "method": "GET",
+      "headers": {
+        "x-rapidapi-host": "rawg-video-games-database.p.rapidapi.com",
+        "x-rapidapi-key": "d10259b06emsh37efa4897e75a6ap1a6aa6jsn152f224f582e"
+      }
+    })
+    .then(response => {
+      console.log(response);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+
   return (
    <>
      <Navbar
@@ -24,13 +38,6 @@ class App extends Component {
        />
        <GlobalStyle />
        <Footer
-         columns={[{
-         icon: (
-         <img src="https://gw.alipayobjects.com/zos/rmsportal/XuVpGqBFxXplzvLjJBZB.svg" />),
-         url: 'https://github.com/Naskiran',
-         openExternal: true,
-      },
-    ]}
     bottom="Made with ❤️ by Naskiran"
       />
    </>

@@ -74,13 +74,13 @@ const Navbar = (props) => {
 export default Navbar
 
 const NavBar = styled(animated.nav)`
-  position: fixed;
+  position: sticky;
   width: 100%;
   top: 0;
   left: 0;
-  background: #2d3436;
-  z-index: 1;
-  font-size: 1.4rem;
+  background: black;
+  z-index: 999;
+  font-size: 1.9rem;
 `;
 
 const FlexContainer = styled.div`
