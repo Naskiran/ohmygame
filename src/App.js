@@ -7,8 +7,23 @@ import 'rc-footer/assets/index.css';
 
 class App extends Component {
   state = {
-    navbarOpen: false
+    navbarOpen: false,
+    game_data: [],
+    // name: gameName,
+    backgroundImg: "",
+    // rating: rate
   }
+
+  getGameData = () => {
+
+    fetch("https://rawg-video-games-database.p.rapidapi.com/games")
+    .then(res => res.json())
+    .then(res => {
+      this.setState({backgroundImg: this.getImg(res.results.background_image)})
+    })
+  }
+
+
 
   handleNavbar = () => {
     this.setState({ navbarOpen: !this.state.navbarOpen});
@@ -16,19 +31,6 @@ class App extends Component {
 
   render() {
 
-    fetch("https://rawg-video-games-database.p.rapidapi.com/games", {
-      "method": "GET",
-      "headers": {
-        "x-rapidapi-host": "rawg-video-games-database.p.rapidapi.com",
-        "x-rapidapi-key": "d10259b06emsh37efa4897e75a6ap1a6aa6jsn152f224f582e"
-      }
-    })
-    .then(response => {
-      console.log(response);
-    })
-    .catch(err => {
-      console.log(err);
-    });
 
   return (
    <>
@@ -37,6 +39,9 @@ class App extends Component {
        handleNavbar={this.handleNavbar}
        />
        <GlobalStyle />
+
+
+
        <Footer
     bottom="Made with ❤️ by Naskiran"
       />
