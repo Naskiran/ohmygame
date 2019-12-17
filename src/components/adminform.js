@@ -2,7 +2,7 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 
 const SimpleForm = props => {
-  const { handleSubmit, pristine, reset, submitting } = props;
+  const { handleSubmit } = props;
   return (
     <form onSubmit={handleSubmit}>
       <div>
@@ -32,5 +32,5 @@ const SimpleForm = props => {
 };
 
 export default reduxForm({
-  form: 'simple', // a unique identifier for this form
+  form: 'simple',
 })(SimpleForm);
