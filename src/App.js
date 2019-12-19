@@ -14,14 +14,14 @@ class App extends Component {
     // rating: rate
   }
 
-  getGameData = () => {
+  // getGameData = () => {
 
-    fetch("https://rawg-video-games-database.p.rapidapi.com/games")
-    .then(res => res.json())
-    .then(res => {
-      this.setState({backgroundImg: this.getImg(res.results.background_image)})
-    })
-  }
+  //   fetch("https://rawg-video-games-database.p.rapidapi.com/games")
+  //   .then(res => res.json())
+  //   .then(res => {
+  //     this.setState({backgroundImg: this.getImg(res.results.background_image)})
+  //   })
+  // }
 
 
 
